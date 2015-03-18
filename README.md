@@ -1,10 +1,13 @@
 # Build bitcoind on Ubuntu 14.10 on Azure
 =========
+Motivation is to create a full bitcoin node using bitcoind, permanlty on using Microsofts Azure.
 
 ##Create an Ubuntu VM on Azure
 
 User is: azureuser
 Password is: xxx
+
+SSH into the VM, using ssh azureuser@yournode.cloudapp.net
 
 ###Pre Reqs
 ```
@@ -20,10 +23,9 @@ sudo apt-get install git
 ```
 
 ###Mount data drive
-Find the usb flash drive by using sudo fdisk sdc -l
+Format the data drive using ext3 and mount
 ```
-sudo mkdir /media/external
-pmount /dev/sda external
+sudo mkdir /media/data
 ```
 
 ###Build bitcoind
@@ -42,10 +44,8 @@ Note, if there is an error on autogen.sh, re install the pre reqs.
 
 ###Move blocks
 ```
-sudo mv ~/.bitcoin/blocks /media/external/
-sudo mv ~/.bitcoin/chainstate /media/external/
-sudo ln -s /media/external/blocks blocks
-sudo ln -s /media/external/chainstate chainstate
+sudo mv ~/.bitcoin/blocks /media/data/
+sudo ln -s /media/data/blocks blocks
 ```
 
 ###Configure
@@ -57,7 +57,7 @@ sudo nano bitcoin.conf
 
 Add the following:
 ```
-server=1
+server=0
 daemon=1
 rpcuser=evapeak
 rpcpassword=xx
