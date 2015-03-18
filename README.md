@@ -1,16 +1,25 @@
 # Build bitcoind on Ubuntu 14.10 on Azure
 
-Motivation is to create a full bitcoin node using bitcoind, permanlty on using Microsoft's Azure.
+Motivation: To create comprehensive instructions for anyone to follow to allow users to deploy a full bitcoin node using bitcoind, permanlty on using Microsoft's Azure.
+
+##Requirements
+1. Secondary drive large enough for the block chain growth
+2. No wallet
+3. No UI
+4. Allow to be discovered by opening firewall
+5. Good uptime
 
 ##Create an Ubuntu VM on Azure
 
 From the Microsoft Azure portal https://manage.windowsazure.com.
+
 1. Select Virtual Machines -> New -> Create Quick.
-2. Give the node a DNS name.
+2. Give the node a DNS name
 3. Select Ubuntu 14.10 from the images drop down
 4. Set a password
 5. Select your region
 6. Attach a second 120GB empty disk (to be used for the block chain)
+7. The size should be set to around A2 while the code is built, then scaled back to A0 after.
 
 ![Step1](https://github.com/evapeak/bitcoind/blob/master/azure1.png)
 
@@ -77,3 +86,6 @@ rpcpassword=xx
 
 ###Done
 The daemon should now be ready to start.  Simply type bitcoind
+
+###References
+https://help.ubuntu.com/community/InstallingANewHardDrive
