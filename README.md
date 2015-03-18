@@ -12,7 +12,7 @@ From the Microsoft Azure portal https://manage.windowsazure.com.
 5. Select your region
 6. Attach a second 120GB empty disk (to be used for the block chain)
 
-![Step1](http://github.com/evapeak/bitcoind/azure1.png)
+![Step1](https://github.com/evapeak/bitcoind/blob/master/azure1.png)
 
 
 User is: azureuser
