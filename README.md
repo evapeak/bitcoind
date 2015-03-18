@@ -4,15 +4,21 @@ Motivation is to create a full bitcoin node using bitcoind, permanlty on using M
 
 ##Create an Ubuntu VM on Azure
 
-From the Microsoft Azure portal https://manage.windowsazure.com, select Virtual Machines -> New -> Create Quick.
-Give the node a DNS name.
-Select Ubuntu 14.10 from the images drop down
-Set a password
-Select your region
-Attach a second empty disk (to be used for the block chain)
+From the Microsoft Azure portal https://manage.windowsazure.com.
+1. Select Virtual Machines -> New -> Create Quick.
+2. Give the node a DNS name.
+3. Select Ubuntu 14.10 from the images drop down
+4. Set a password
+5. Select your region
+6. Attach a second 120GB empty disk (to be used for the block chain)
+
+![Step1](http://github.com/evapeak/bitcoind/azure1.png)
+
 
 User is: azureuser
 Password is: xxx
+
+Add port 8333 to the endpoint list.
 
 SSH into the VM, using ssh azureuser@yournode.cloudapp.net
 
