@@ -14,7 +14,6 @@ From the Microsoft Azure portal https://manage.windowsazure.com.
 
 ![Step1](https://github.com/evapeak/bitcoind/blob/master/azure1.png)
 
-
 User is: azureuser
 Password is: xxx
 
