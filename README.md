@@ -4,6 +4,10 @@ Motivation is to create a full bitcoin node using bitcoind, permanlty on using M
 
 ##Create an Ubuntu VM on Azure
 
+From the Microsoft Azure portal https://manage.windowsazure.com, select Virtual Machines -> New -> Create Quick.
+
+Attach a second empty disk (to be used for the block chain)
+
 User is: azureuser
 Password is: xxx
 
