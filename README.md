@@ -34,7 +34,10 @@ You may want to restrict access to port 22 (SSH port) to your own IP.
 
 Now we can SSH into the VM, using ssh azureuser@yournode.cloudapp.net
 
-###Pre Reqs
+###Prerequisites
+
+For the software to build a few dependencies must be installed first.  You can install them by the following commands.
+
 ```
 sudo apt-get update
 sudo apt-get install python-software-properties
@@ -48,8 +51,13 @@ sudo apt-get install git
 ```
 
 ###Mount data drive
-Format the data drive using ext3 and mount it.  The secondary drive should be named /dev/sdc.  You can check this by the command sudo fdisk -l
+Format the data drive using ext3 filesystem and mount it.  The secondary drive should be named /dev/sdc
 ```
+sudo fdisk /dev/sdc
+n
+p
+1
+w
 sudo mkdir /media/data
 sudo mount -t ext3 /dev/sdc 
 ```
