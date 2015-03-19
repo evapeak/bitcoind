@@ -27,9 +27,12 @@ From the Microsoft Azure portal https://manage.windowsazure.com.
 User is: azureuser
 Password is: xxx
 
-Add port 8333 to the endpoint list.
+###Open Azure firewall port
+To allow other bitcoin nodes to discover yours, we need to allow UDP 8333 port to be opened.  From Azure select endpoints tab.  Add new endpoint Port 8333 UDP.
 
-SSH into the VM, using ssh azureuser@yournode.cloudapp.net
+You may want to restrict access to port 22 (SSH port) to your own IP.
+
+Now we can SSH into the VM, using ssh azureuser@yournode.cloudapp.net
 
 ###Pre Reqs
 ```
