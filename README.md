@@ -69,10 +69,21 @@ sudo make install
 Note, if there is an error on autogen.sh, re install the pre reqs.
 
 ###Move blocks
+
+We now will move the blocks from the default location to the secondary drive, and create a static link.
+
 ```
 sudo mv ~/.bitcoin/blocks /media/data/
 sudo ln -s /media/data/blocks blocks
 ```
+
+To check this has worked perform the following
+```
+cd ~/.bitcoin
+ls
+```
+
+"Blocks" should be in a cyan colour.
 
 ###Configure
 Last step we need to add the bitcoin config file.
@@ -85,11 +96,11 @@ Add the following:
 ```
 server=1
 rpcuser=username
-rpcpassword=xx
+rpcpassword=xxxxxxxx
 ```
 
 ###Done
-The daemon should now be ready to start.  Simply type bitcoind
+The daemon should now be ready to start.  Simply type bitcoind to start the node.   You should see "bitcoind starting"
 
 ###Trouble shooting
 
