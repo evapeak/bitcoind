@@ -1,4 +1,4 @@
-# Build bitcoind on Ubuntu 14.10 on Azure
+# Host a bitcoind node on Ubuntu 14.10 / Microsoft Azure
 
 Motivation: To create comprehensive instructions for anyone to follow to allow users to deploy a full bitcoin node using bitcoind, permanlty on using Microsoft's Azure.
 
