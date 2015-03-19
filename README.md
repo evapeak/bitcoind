@@ -14,14 +14,15 @@ Motivation: To create comprehensive instructions for anyone to follow to allow u
 From the Microsoft Azure portal https://manage.windowsazure.com.
 
 1. Select Virtual Machines -> New -> Create Quick.
-2. Give the node a DNS name
-3. Select Ubuntu 14.10 from the images drop down
-4. Set a password
-5. Select your region
+1.1. Give the node a DNS name
+1.2. Select Ubuntu 14.10 from the images drop down
+1.3. Set a password
+1.4. The size should be set to A2 as a minimum while the code is built, then scaled back to A0 after.
+1.5. Select your region
 6. Attach a second 120GB empty disk (to be used for the block chain)
-7. The size should be set to around A2 while the code is built, then scaled back to A0 after.
 
 ![Step1](https://github.com/evapeak/bitcoind/blob/master/azure1.png)
+![Step2](https://github.com/evapeak/bitcoind/blob/master/azure2.png)
 
 User is: azureuser
 Password is: xxx
@@ -44,9 +45,10 @@ sudo apt-get install git
 ```
 
 ###Mount data drive
-Format the data drive using ext3 and mount
+Format the data drive using ext3 and mount it.  The secondary drive should be named /dev/sdc.  You can check this by the command sudo fdisk -l
 ```
 sudo mkdir /media/data
+sudo mount -t ext3 /dev/sdc 
 ```
 
 ###Build bitcoind
@@ -87,5 +89,11 @@ rpcpassword=xx
 ###Done
 The daemon should now be ready to start.  Simply type bitcoind
 
+###Trouble shooting
+
+You can check the drive space by using the command df -h
+Debug log files are located at ~/.bitcoin/debug.log  You can use the command sudo tail -f ~/.bitcoin/debug.log to monitor log files.
+
 ###References
 https://help.ubuntu.com/community/InstallingANewHardDrive
+http://askubuntu.com/questions/73160/how-do-i-find-the-amount-of-free-space-on-my-hard-drive
