@@ -14,12 +14,12 @@ Motivation: To create comprehensive instructions for anyone to follow to allow u
 From the Microsoft Azure portal https://manage.windowsazure.com.
 
 1. Select Virtual Machines -> New -> Create Quick.
-1.1. Give the node a DNS name
-1.2. Select Ubuntu 14.10 from the images drop down
-1.3. Set a password
-1.4. The size should be set to A2 as a minimum while the code is built, then scaled back to A0 after.
-1.5. Select your region
-6. Attach a second 120GB empty disk (to be used for the block chain)
+2. Give the node a DNS name
+3. Select Ubuntu 14.10 from the images drop down
+4. Set a password
+5. The size should be set to A2 as a minimum while the code is built, then scaled back to A0 after.
+6. Select your region
+7. Attach a second 120GB empty disk (to be used for the block chain)
 
 ![Step1](https://github.com/evapeak/bitcoind/blob/master/azure1.png)
 ![Step2](https://github.com/evapeak/bitcoind/blob/master/azure2.png)
@@ -80,8 +80,7 @@ sudo nano bitcoin.conf
 
 Add the following:
 ```
-server=0
-daemon=1
+server=1
 rpcuser=username
 rpcpassword=xx
 ```
