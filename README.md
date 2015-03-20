@@ -28,7 +28,7 @@ User is: azureuser
 Password is: xxx
 
 ###Open Azure firewall port
-To allow other bitcoin nodes to discover yours, we need to allow UDP 8333 port to be opened.  From Azure select endpoints tab.  Add new endpoint Port 8333 UDP.
+To allow other bitcoin nodes to discover yours, we need to allow TCP 8333 port to be opened.  From Azure select endpoints tab.  Add new endpoint Port 8333 TCP.
 
 You may want to restrict access to port 22 (SSH port) to your own IP.
 
