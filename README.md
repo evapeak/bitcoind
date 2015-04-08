@@ -81,7 +81,8 @@ Note, if there is an error on autogen.sh, re install the pre reqs.
 We now will move the blocks from the default location to the secondary drive, and create a static link.
 
 ```
-sudo mv ~/.bitcoin/blocks /media/data/
+sudo cp ~/.bitcoin/blocks /media/data/
+sudo rm -R ~/.bitcoin/blocks
 sudo ln -s /media/data/blocks blocks
 ```
 
